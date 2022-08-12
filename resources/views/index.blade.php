@@ -67,15 +67,29 @@
         {{-- level1
              --}}
 
-             <div class="h-screen bg-zinc-900">
+             <div class=" bg-zinc-900">
                 <div class="container mx-auto">
-                    <div class="flex flex-col items-center justify-center">
+                    <div class="flex flex-col gap-8 items-center justify-center py-10">
                         <div>
-                            <img src="{{asset('/images/header1.png')}}" class="w-[600px]" />
+                            <img src="{{asset('/images/header1.png')}}" class="w-[500px]" />
                         </div>
-                        <div>
+                        <div class="flex flex-col gap-5 items-center justify-center">
                             <h1 class="text-7xl font-bold text-gray-100">Amunra NFT</h1>
                             <p class="text-4xl text-gray-100">Play To Earn</p>
+                        </div>
+                        <div class="flex gap-5">
+                            <a href="">
+                                <ion-icon name="logo-instagram" class="text-7xl text-gray-100"></ion-icon>
+                            </a>
+                            <a href="">
+                                <ion-icon name="logo-instagram" class="text-7xl text-gray-100"></ion-icon>
+                            </a>
+                            <a href="">
+                                <ion-icon name="logo-instagram" class="text-7xl text-gray-100"></ion-icon>
+                            </a>
+                            <a href="">
+                                <ion-icon name="logo-instagram" class="text-7xl text-gray-100"></ion-icon>
+                            </a>
                         </div>
 
                     </div>
