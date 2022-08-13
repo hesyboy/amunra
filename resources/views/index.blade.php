@@ -16,16 +16,17 @@
 </head>
 <body>
 
-    <header>
-        <div class="navbar bg-zinc-900">
+    <header class="sticky top-0 z-50">
+        <div class="navbar bg-black py-5 px-5">
             <div class="navbar-start">
               <div class="dropdown">
                 <label tabindex="0" class="btn btn-ghost lg:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                  <li><a>Item 1</a></li>
-                  <li tabindex="0">
+                  <li><a>About Amunra</a></li>
+                  <li><a>RoadMap</a></li>
+                  {{-- <li tabindex="0">
                     <a class="justify-between">
                       Parent
                       <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
@@ -34,16 +35,18 @@
                       <li><a>Submenu 1</a></li>
                       <li><a>Submenu 2</a></li>
                     </ul>
-                  </li>
+                  </li> --}}
                   <li><a>Item 3</a></li>
                 </ul>
               </div>
-              <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+              <a class="text-gray-100 text-3xl">AMUNRA NFT</a>
             </div>
-            <div class="navbar-center hidden lg:flex">
+            <div class="navbar-center hidden lg:flex text-gray-100">
               <ul class="menu menu-horizontal p-0">
-                <li><a>Item 1</a></li>
-                <li tabindex="0">
+                <li><a>Why Amunra</a></li>
+                <li><a>RoadMap</a></li>
+                <li><a>Mint Info</a></li>
+                {{-- <li tabindex="0">
                   <a>
                     Parent
                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
@@ -52,14 +55,28 @@
                     <li><a>Submenu 1</a></li>
                     <li><a>Submenu 2</a></li>
                   </ul>
-                </li>
+                </li> --}}
                 <li><a>Item 3</a></li>
               </ul>
             </div>
             <div class="navbar-end">
-              <a class="btn">Get started</a>
+                <div class="flex gap-5 w">
+                    <a class="bg-gradient-to-r from-yellow-500 to-orange-600
+                    transition-all duration-300 hover:scale-95
+                     text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2">
+                        <ion-icon name="bag-handle" class="text-3xl "></ion-icon>
+                        <span class="">Mint NFT</span>
+                    </a>
+                    <a class="bg-gradient-to-r from-indigo-500 to-indigo-800
+                    transition-all duration-300 hover:scale-95
+                     text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2"  onclick="connect()">
+                        <ion-icon name="wallet" class="text-3xl "></ion-icon>
+                        <span class="" id="connectButtontxt">Connect Wallet</span>
+                    </a>
+                </div>
             </div>
           </div>
+          <div class="h-1 bg-zinc-900"></div>
     </header>
 
     <div class="bg-zinc-900 " >
@@ -67,47 +84,108 @@
         {{-- level1
              --}}
 
-             <div class=" bg-zinc-900">
+             <div class=" bg-zinc-900 py-10" style="background-color: #000000;
+             background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); background-attachment: fixed;";>
                 <div class="container mx-auto">
                     <div class="flex flex-col gap-8 items-center justify-center py-10">
+
+
                         <div>
-                            <img src="{{asset('/images/header1.png')}}" class="w-[500px]" />
+                            <div class="swiper mySwiper1" style="
+                            width: 300px;
+                            height: 300px;
+                        ">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide">
+                                    <img src="{{asset('/images/slide1.png')}}" class="w-[300px]" />
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{asset('/images/slide1.png')}}" class="w-[300px]" />
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{asset('/images/slide1.png')}}" class="w-[300px]" />
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{asset('/images/slide1.png')}}" class="w-[300px]" />
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{asset('/images/slide1.png')}}" class="w-[300px]" />
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{asset('/images/slide1.png')}}" class="w-[300px]" />
+                                  </div>
+                                </div>
+
+                              </div>
+
+                              <!-- Swiper JS -->
+                              <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+                              <!-- Initialize Swiper -->
+                              <script>
+                                var swiper = new Swiper(".mySwiper1", {
+                                  effect: "flip",
+                                  grabCursor: true,
+                                  autoplay: {
+                                    delay: 1500,
+                                    disableOnInteraction: false,
+                                    },
+
+                                });
+                              </script>
+                            {{-- <img src="{{asset('/images/slide1.png')}}" class="w-[300px]" /> --}}
                         </div>
+
+
+
                         <div class="flex flex-col gap-5 items-center justify-center">
-                            <h1 class="text-7xl font-bold text-gray-100">Amunra NFT</h1>
-                            <p class="text-4xl text-gray-100">Play To Earn</p>
+                            <h1 class="text-7xl text-gray-100 font1 tracking-[6px]">AMUNRA NFT</h1>
+                            <p class="text-4xl text-gray-100 font1 tracking-[4px]">Play To Earn</p>
                         </div>
-                        <div class="flex gap-5">
-                            <a href="">
-                                <ion-icon name="logo-instagram" class="text-7xl text-gray-100"></ion-icon>
-                            </a>
-                            <a href="">
-                                <ion-icon name="logo-instagram" class="text-7xl text-gray-100"></ion-icon>
-                            </a>
-                            <a href="">
-                                <ion-icon name="logo-instagram" class="text-7xl text-gray-100"></ion-icon>
-                            </a>
-                            <a href="">
-                                <ion-icon name="logo-instagram" class="text-7xl text-gray-100"></ion-icon>
-                            </a>
+                        <div class="flex flex-col gap-5 justify-center items-center">
+                            <div class=" text-xl text-gray-100 mt-14">Follow Us</div>
+                            <div class="flex gap-8">
+                                <a class="flex flex-col justify-center items-center text-gray-100 hover:text-yellow-600
+                                transition-all duration-300 hover:scale-95 " href="">
+                                    <ion-icon name="logo-instagram" class="text-5xl "></ion-icon>
+                                    <span class="">Instagram</span>
+                                </a>
+                                <a class="flex flex-col justify-center items-center" href="">
+                                    <ion-icon name="logo-discord" class="text-5xl text-gray-100"></ion-icon>
+                                    <span class="text-gray-100">Discord</span>
+                                </a>
+                                <a  class="flex flex-col justify-center items-center" href="">
+                                    <ion-icon name="logo-twitter" class="text-5xl text-gray-100"></ion-icon>
+                                    <span class="text-gray-100">Twitter</span>
+                                </a>
+                                <a class="flex flex-col justify-center items-center " href="">
+                                    <ion-icon name="navigate-circle" class="text-5xl text-gray-100"></ion-icon>
+                                    <span class="text-gray-100">Telegram</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class=" flex flex-col items-center justify-center p-1">
+                                <ion-icon name="caret-down" class="text-4xl text-yellow-600 mt-1"></ion-icon>
+                            </div>
                         </div>
 
                     </div>
                 </div>
+
+
              </div>
 
         {{-- level2 --}}
-        <div class="flex flex-col bg-zinc-800  relative">
+        <div class="flex flex-col bg-zinc-900  relative">
             <div class="container mx-auto ">
 
                 <div class="grid grid-cols-2 gap-10 items-center">
                     <div class="p-5 flex items-center justify-center">
                         <div class="col-span-4">
                             <style>
-                                .swiper {
-                                  width: 400px;
-                                  height: 400px;
-                                }
+
 
                                 .swiper-slide {
                                   display: flex;
@@ -124,13 +202,13 @@
                                 }
 
                               </style>
-                            <div class="swiper mySwiper">
+                            <div class="swiper myswiper" style="width: 400px; height: 550px;">
                                 <div class="swiper-wrapper">
-                                  <div class="swiper-slide">
-                                    <img src="{{asset('/images/amunra1.png')}}" class="" />
+                                  <div class="swiper-slide " style="background-color: transparent">
+                                    <img src="{{asset('/images/amunra1.png')}}" class="w-full" />
                                   </div>
                                   <div class="swiper-slide">
-                                    <img src="{{asset('/images/amunra2.png')}}" class="" />
+                                    <img src="{{asset('/images/amunra2.png')}}" class="w-full" />
                                   </div>
                                 </div>
                               </div>
@@ -140,7 +218,7 @@
 
                               <!-- Initialize Swiper -->
                               <script>
-                                var swiper = new Swiper(".mySwiper", {
+                                var swiper = new Swiper(".myswiper", {
                                   effect: "cards",
                                   grabCursor: true,
                                 });
@@ -154,18 +232,25 @@
                             <p class="text-xl text-gray-400">EACH AMUNRA NFT HAS A UNIQUE SET OF TRAITS AND UNLOCKS VARYING UNIQUE LEVELS OF ACCESS AND PERKS FOR ITS OWNER</p>
                         </div>
                         <div class="flex gap-5 w-full">
-                            <button class="bg-yellow-600 text-gray-100 p-3 rounded-lg flex items-center gap-2">
-                                <ion-icon name="bag-handle-outline" class="text-3xl "></ion-icon>
-                                <span class="text-base">Mint Amunra NFT</span>
-                              </button>
-                              <button class="bg-blue-700 text-gray-100 p-3 rounded-lg flex items-center gap-2">
-                                <ion-icon name="wallet-outline" class="text-3xl "></ion-icon>
-                                <span class="text-base ">Connect Wallet</span>
-                              </button>
-
+                            <a class="bg-gradient-to-r from-yellow-500 to-orange-600
+                            transition-all duration-300 hover:scale-95
+                             text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2">
+                                <ion-icon name="bag-handle" class="text-4xl "></ion-icon>
+                                <span class="text-xl">Mint NFT</span>
+                            </a>
+                            <a class="bg-gradient-to-r from-indigo-500 to-indigo-800
+                            transition-all duration-300 hover:scale-95
+                             text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2">
+                                <ion-icon name="wallet" class="text-4xl "></ion-icon>
+                                <span class="text-xl">Connect Wallet</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <img src="{{asset('images/wall2.png')}}" alt="" srcset="">
             </div>
 
             {{-- <div class="relative bottom-20 z-0">
@@ -207,23 +292,7 @@
                         </div>
                     </div>
                     <div class="col-span-4">
-                        <style>
-                            .swiper {
-                              width: 450px;
-                              height: 600px;
-                            }
 
-                            .swiper-slide {
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              border-radius: 18px;
-                              font-size: 22px;
-                              font-weight: bold;
-                              color: #fff;
-                            }
-
-                          </style>
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                               <div class="swiper-slide">
@@ -251,6 +320,8 @@
 
 
             </div>
+
+
         </div>
 
 
@@ -267,5 +338,43 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
+
+
+
+
+
+      <title>Connect to crypto wallet</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+
+   <script>
+    /* To connect using MetaMask */
+    async function connect() {
+        $btn=document.getElementById('connectButtontxt');
+
+      if (typeof window.ethereum !== 'undefined') {
+         $acc=await window.ethereum.request({ method: "eth_requestAccounts" });
+         window.web3 = new Web3(window.ethereum);
+         const account = web3.eth.accounts;
+         //Get the current MetaMask selected/active wallet
+         const walletAddress = account.givenProvider.selectedAddress;
+         $btn.textContent ="Connected";
+         console.log(`Wallet: ${walletAddress}`);
+
+      } else {
+        console.log($acc);
+       console.log("No wallet");
+       window.open("https://metamask.io/download/", "_blank");
+      }
+    }
+    </script>
+<button id="connectButton" onclick="connect()">Connect Wallet</button>
+
 </body>
 </html>
+
+
+

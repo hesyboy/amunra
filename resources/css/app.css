@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+
+    @font-face {
+        font-family: font1;
+        src: url('/fonts/blowbrush.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: font2;
+        src: url('/fonts/ArcaMajora3-Heavy.ttf') format('truetype');
+    }
+
+
+
+    body{
+        font-family: font2!important;
+    }
+
+    .font1{
+        font-family: font1!important;
+    }
+
+
+};
