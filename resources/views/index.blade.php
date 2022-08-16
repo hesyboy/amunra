@@ -94,15 +94,15 @@ background-image: url('{{asset('images/back.png')}}'); ";>
         {{-- level1
              --}}
 
-             <div class="flex flex-col items-center justify-center  h-screen"  >
+             <div class="flex flex-col items-center justify-center mt-10 mb-32 "  >
                 <div class="container mx-auto">
                     <div class="flex flex-col gap-8  justify-center items-center ">
 
                         <div class="flex flex-col gap-8 items-center justify-between group">
-                            <div class="bg-yellow-600 p-3 rounded-full">
+                            <div class="bg-yellow-600 p-1  mask mask-triangle">
                                 <div class="swiper mySwiper1 bg-black rounded-full p-3" style="
-                                width: 270px;
-                                height: 270px;
+                                width: 280px;
+                                height: 280px;
                                 ">
                                     <div class="swiper-wrapper">
                                       <div class="swiper-slide">
@@ -144,7 +144,7 @@ background-image: url('{{asset('images/back.png')}}'); ";>
 
                             <div class="flex flex-col gap-5 items-center ">
                                 <h1 class="text-7xl text-zinc-300 tracking-[6px] font2">AMUNRA</h1>
-                                <p class="text-5xl text-yellow-600 font1 tracking-[4px]">Play To Earn</p>
+                                <p class="text-6xl text-yellow-600 font1 tracking-[4px]">Play To Earn</p>
                                 <div class="flex flex-col justify-center text-gray-100">
                                     <div class="w-full text-center text-lg font2">
                                         Your Wallet Address
@@ -190,9 +190,342 @@ background-image: url('{{asset('images/back.png')}}'); ";>
              </div>
 
 
-                     {{-- level2 --}}
-        <div class="flex flex-col items-center justify-center  my-40">
+
+             {{-- level2 --}}
+        <div class="flex flex-col items-center justify-center  my-32">
             <div class="container mx-auto ">
+                <div class="flex flex-col items-center justify-center gap-12">
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <h2 class="text-7xl text-gray-300 font2 tracking-[6px]">
+                            <span>Why </span>
+                            <span class="text-yellow-600 font1"> Amunra </span>
+                            <span>NFT</span>
+                         </h2>
+                         <h2 class="text-3xl  font2 tracking-[4px] text-yellow-600"> Most Important Of Our Featured </h2>
+
+                        <p class="text-lg  text-gray-300 text-center font2 w-2/3">EACH AMUNRA NFT HAS A UNIQUE SET OF TRAITS AND UNLOCKS VARYING UNIQUE LEVELS OF ACCESS AND PERKS FOR ITS OWNER</p>
+
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-12 w-5/6 bg-zinc-900 p-5 rounded-2xl">
+                                <div class=" text-zinc-900 flex flex-col items-center gap-4  rounded-xl p-2
+                                    hover:scale-95 transition-all duration-300 cursor-pointer">
+                                    <ion-icon name="checkmark-done" class="text-5xl  text-zinc-900 bg-yellow-600 rounded-xl p-1"></ion-icon>
+                                    <div class="flex flex-col items-center">
+                                        <div class="text-2xl font2 text-yellow-600">Taget Goal</div>
+                                        <div class="text-gray-100">
+                                            adaad asdasd dasads sdfsdf sdsdf
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" text-zinc-900 flex flex-col items-center gap-4  rounded-xl p-2
+                                hover:scale-95 transition-all duration-300 cursor-pointer">
+                                <ion-icon name="checkmark-done" class="text-5xl  text-zinc-900 bg-yellow-600 rounded-xl p-1"></ion-icon>
+                                <div class="flex flex-col items-center">
+                                    <div class="text-2xl font2 text-yellow-600">Taget Goal</div>
+                                    <div class="text-gray-100">
+                                        adaad asdasd dasads sdfsdf sdsdf
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" text-zinc-900 flex flex-col items-center gap-4  rounded-xl p-2
+                            hover:scale-95 transition-all duration-300 cursor-pointer">
+                            <ion-icon name="checkmark-done" class="text-5xl  text-zinc-900 bg-yellow-600 rounded-xl p-1"></ion-icon>
+                            <div class="flex flex-col items-center">
+                                <div class="text-2xl font2 text-yellow-600">Taget Goal</div>
+                                <div class="text-gray-100">
+                                    adaad asdasd dasads sdfsdf sdsdf
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+                                  {{-- level3 --}}
+                                  <div class="flex flex-col   relative items-center justify-center  my-32">
+                                    <div class="container mx-auto flex flex-col justify-center items-center ">
+
+                                        <div class=" flex flex-col items-center justify-center gap-3 mb-3">
+                                            <h2 class="text-7xl text-gray-300 font2 tracking-[6px] text-center">
+                                                <span>Mint </span>
+                                                <span class="text-yellow-600 font1"> Amunra </span>
+                                                <span>NFT</span>
+                                             </h2>
+                                             <h2 class="text-4xl text-yellow-600 font2 tracking-[6px]"> 10,000 Mintable NFTs</h2>
+
+                                        </div>
+
+                                        <div class="flex w-max p-4 items-center justify-center gap-10 bg-zinc-900/90 rounded-2xl mt-10">
+
+                                            <div class="p-3 flex items-center justify-center">
+                                                <div class="col-span-4">
+                                                    <style>
+
+
+                                                        .swiper-slide {
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        border-radius: 18px;
+                                                        font-size: 22px;
+                                                        font-weight: bold;
+                                                        color: #fff;
+                                                        }
+                                                        .swiper-slide-shadow{
+                                                            opacity: 0;
+                                                            background: rgba(0, 0, 0, 0)!important;
+                                                        }
+
+                                                    </style>
+                                                    <div class="swiper myswiper" style="width: 350px; height: 550px;">
+                                                        <div class="swiper-wrapper">
+                                                        <div class="swiper-slide " style="background-color: transparent">
+                                                            <img src="{{asset('/images/amunra1.png')}}" class="w-full" />
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <img src="{{asset('/images/amunra2.png')}}" class="w-full" />
+                                                        </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Swiper JS -->
+                                                    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+                                                    <!-- Initialize Swiper -->
+                                                    <script>
+                                                        var swiper = new Swiper(".myswiper", {
+                                                        effect: "cards",
+                                                        grabCursor: true,
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+
+                                            <div class=" flex flex-col gap-8 items-center">
+                                                <div class="flex flex-col items-center gap-8">
+                                                    <div class="flex flex-col gap-8 items-center ">
+                                                        {{-- <h2 class="text-6xl text-gray-300 font1 tracking-[6px]"> Play To Earn </h2> --}}
+                                                        <h2 class="text-5xl text-gray-300 font2 tracking-[6px]"> Start Mint At  </h2>
+                                                        <h2 class="text-3xl text-yellow-600 font2 tracking-[6px]">  09/09/2022</h2>
+
+
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="stats shadow bg-zinc-800 text-gray-100">
+
+                                                    <div class="stat place-items-center">
+                                                        <div class="stat-title">NFT Collection</div>
+                                                        <div class="stat-value text-yellow-600">1</div>
+                                                        <div class="text-lg stat-desc text-white">+ 3 At Soon</div>
+                                                      </div>
+
+                                                    <div class="stat place-items-center">
+                                                      <div class="stat-title">NFT Amount</div>
+                                                      <div class="stat-value ">10,000</div>
+                                                      <div class="text-lg stat-desc text-white">in one Collection</div>
+                                                    </div>
+
+                                                    <div class="stat place-items-center">
+                                                      <div class="stat-title">Users Subscriber</div>
+                                                      <div class="stat-value text-yellow-600 ">2.2M</div>
+                                                      <div class="text-lg stat-desc text-green-500">↗︎ (250%)</div>
+                                                    </div>
+
+                                                  </div>
+                                                <div class="flex justify-center gap-5 w-full">
+                                                    <a class="bg-gradient-to-r from-yellow-500 to-orange-600
+                                                    transition-all duration-300 hover:scale-95
+                                                     text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2">
+                                                        <ion-icon name="bag-handle" class="text-4xl "></ion-icon>
+                                                        <span class="text-xl font2">Mint Now</span>
+                                                    </a>
+                                                    <a class="bg-gradient-to-r from-indigo-500 to-indigo-800
+                                                    transition-all duration-300 hover:scale-95
+                                                     text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2">
+                                                        <ion-icon name="link" class="text-4xl "></ion-icon>
+                                                        <span class="text-xl font2">View On OpenSea</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                        {{-- level5 --}}
+        <div class="flex flex-col items-center justify-center py-32  mt-32 mb-20">
+            <div class="container mx-auto ">
+                <div class="flex flex-col items-center justify-center gap-12">
+                    <div class="flex flex-col gap-5 items-center justify-center">
+                        <h2 class="text-7xl text-gray-300 font2 tracking-[6px]">
+                            <span class="text-yellow-600 font1"> Amunra </span>
+                            <span>RoadMap</span>
+                         </h2>
+                         <h2 class="text-3xl  font2 tracking-[4px] text-yellow-600"> The Way Of Our Goals / 19lvl </h2>
+
+                    </div>
+
+                    <div class="flex gap-12 w-5/6 bg-zinc-900 p-5 rounded-2xl" x-data="{popup:0}">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper mb-28">
+                              <div class="swiper-slide">
+                                <div >
+                                    <div @click="popup=1" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
+                                    hover:scale-95 transition-all duration-300 cursor-pointer">
+                                        <span class="text-4xl  text-white bg-zinc-900 rounded-xl py-2 px-4">1</span>
+                                        <div>
+                                            <div class="text-xl font2">Taget Goal 1</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div >
+                                    <div @click="popup=2" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
+                                    hover:scale-95 transition-all duration-300 cursor-pointer">
+                                        <span class="text-4xl  text-white bg-zinc-900 rounded-xl py-2 px-4">2</span>
+                                        <div>
+                                            <div class="text-xl font2">Taget Goal 2</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div >
+                                    <div @click="popup=3" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
+                                    hover:scale-95 transition-all duration-300 cursor-pointer">
+                                        <span class="text-4xl  text-white bg-zinc-900 rounded-xl py-2 px-4">3</span>
+                                        <div>
+                                            <div class="text-xl font2">Taget Goal 3</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div >
+                                    <div @click="popup=4" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
+                                    hover:scale-95 transition-all duration-300 cursor-pointer">
+                                        <span class="text-4xl  text-white bg-zinc-900 rounded-xl py-2 px-4">4</span>
+                                        <div>
+                                            <div class="text-xl font2">Taget Goal 4</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div class="swiper-scrollbar bg-red-500" style="height: 20px!important"></div>
+                          </div>
+
+
+                        {{-- 1 --}}
+                        <div x-show="popup==1" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/80 z-50 flex justify-center items-center">
+                            <div class="bg-gray-100 py-5 px-8 rounded-2xl w-2/4 flex flex-col gap-3">
+                                <div class="flex justify-between items-center">
+                                    <div class="text-2xl font2">Taget Goal 1</div>
+                                    <ion-icon @click="popup=0" name="close-outline" class="text-4xl cursor-pointer"></ion-icon>
+                                </div>
+                                <hr>
+                                <p class="text-lg">dsfsdfsdfsf sdf sdf sf sfs f</p>
+                            </div>
+                        </div>
+
+                        {{-- 2 --}}
+                        <div x-show="popup==2" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/80 z-50 flex justify-center items-center">
+                            <div class="bg-gray-100 py-5 px-8 rounded-2xl w-2/4 flex flex-col gap-3">
+                                <div class="flex justify-between items-center">
+                                    <div class="text-2xl font2">Taget Goal 2</div>
+                                    <ion-icon @click="popup=0" name="close-outline" class="text-4xl cursor-pointer"></ion-icon>
+                                </div>
+                                <hr>
+                                <p class="text-lg">dsfsdfsdfsf sdf sdf sf sfs f</p>
+                            </div>
+                        </div>
+
+
+                        {{-- 3 --}}
+                        <div x-show="popup==3" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/80 z-50 flex justify-center items-center">
+                            <div class="bg-gray-100 py-5 px-8 rounded-2xl w-2/4 flex flex-col gap-3">
+                                <div class="flex justify-between items-center">
+                                    <div class="text-2xl font2">Taget Goal 3</div>
+                                    <ion-icon @click="popup=0" name="close-outline" class="text-4xl cursor-pointer"></ion-icon>
+                                </div>
+                                <hr>
+                                <p class="text-lg">dsfsdfsdfsf sdf sdf sf sfs f</p>
+                            </div>
+                        </div>
+
+
+                        {{-- 4 --}}
+                        <div x-show="popup==4" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/80 z-50 flex justify-center items-center">
+                            <div class="bg-gray-100 py-5 px-8 rounded-2xl w-2/4 flex flex-col gap-3">
+                                <div class="flex justify-between items-center">
+                                    <div class="text-2xl font2">Taget Goal 4</div>
+                                    <ion-icon @click="popup=0" name="close-outline" class="text-4xl cursor-pointer"></ion-icon>
+                                </div>
+                                <hr>
+                                <p class="text-lg">dsfsdfsdfsf sdf sdf sf sfs f</p>
+                            </div>
+                        </div>
+
+                          <!-- Swiper JS -->
+                          <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+                          <!-- Initialize Swiper -->
+                          <script>
+                            var swiper = new Swiper(".mySwiper", {
+                              slidesPerView: 4,
+                              spaceBetween: 30,
+                              slidesPerGroup: 4,
+                              loop: true,
+                              loopFillGroupWithBlank: true,
+                              scrollbar: {
+                                el: ".swiper-scrollbar",
+
+                                },
+
+
+                            });
+                          </script>
+
+
+
+
+
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+                     {{-- level4 --}}
+        <div class="flex flex-col items-center justify-center  my-20 relative">
+            <div class="text-[400px] font1 text-gray-100/5 absolute z-0">
+                AMUNRA
+            </div>
+
+            <div class="container mx-auto z-10 ">
 
                 <div class="">
 
@@ -229,7 +562,7 @@ background-image: url('{{asset('images/back.png')}}'); ";>
                                            5 nft developers , 2 gaming developers and 3 moderators.
                                     </p>
                                 </div>
-                                <div class="flex w-full justify-center items-center my-5">
+                                <div class="flex w-full justify-center items-center my-5 z-10">
                                     <button x-on:click="box=!box" x-text=" box ?'Show Less' :'Show Me More'"  class="font2 text-xl p-3 bg-gradient-to-r from-yellow-500 to-orange-600 text-gray-900 rounded-xl"></button>
                                 </div>
                             </div>
@@ -255,368 +588,28 @@ background-image: url('{{asset('images/back.png')}}'); ";>
                 </div>
             </div>
 
-        </div>
-
-
-
-                     {{-- level3 --}}
-                     <div class="flex flex-col   relative items-center justify-center  my-40">
-                        <div class="container mx-auto ">
-
-                            <div class="flex flex-col items-center justify-center gap-3 mb-3">
-                                <h2 class="text-7xl text-gray-300 font2 tracking-[6px] text-center">
-                                    <span>Mint </span>
-                                    <span class="text-yellow-600"> Amunra </span>
-                                    <span>NFT</span>
-                                 </h2>
-                                 <h2 class="text-4xl text-yellow-600 font2 tracking-[6px]"> 10,000 Mintable NFTs</h2>
-
-                            </div>
-
-                            <div class="flex  items-center justify-center gap-5">
-
-                                <div class="p-5 flex items-center justify-center">
-                                    <div class="col-span-4">
-                                        <style>
-
-
-                                            .swiper-slide {
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: center;
-                                            border-radius: 18px;
-                                            font-size: 22px;
-                                            font-weight: bold;
-                                            color: #fff;
-                                            }
-                                            .swiper-slide-shadow{
-                                                opacity: 0;
-                                                background: rgba(0, 0, 0, 0)!important;
-                                            }
-
-                                        </style>
-                                        <div class="swiper myswiper" style="width: 350px; height: 550px;">
-                                            <div class="swiper-wrapper">
-                                            <div class="swiper-slide " style="background-color: transparent">
-                                                <img src="{{asset('/images/amunra1.png')}}" class="w-full" />
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <img src="{{asset('/images/amunra2.png')}}" class="w-full" />
-                                            </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Swiper JS -->
-                                        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-                                        <!-- Initialize Swiper -->
-                                        <script>
-                                            var swiper = new Swiper(".myswiper", {
-                                            effect: "cards",
-                                            grabCursor: true,
-                                            });
-                                        </script>
-                                    </div>
-                                </div>
-
-                                <div class=" flex flex-col gap-8 items-center">
-                                    <div class="flex flex-col items-center gap-8">
-                                        <div class="flex flex-col gap-8 items-center ">
-                                            {{-- <h2 class="text-6xl text-gray-300 font1 tracking-[6px]"> Play To Earn </h2> --}}
-                                            <h2 class="text-5xl text-gray-300 font2 tracking-[6px]"> Start Mint At  </h2>
-                                            <h2 class="text-3xl text-gray-300 font2 tracking-[6px]">  09/09/2022</h2>
-
-
-                                        </div>
-
-
-                                    </div>
-
-                                    <div class="stats shadow bg-zinc-800 text-gray-100">
-
-                                        <div class="stat place-items-center">
-                                            <div class="stat-title">NFT Collection</div>
-                                            <div class="stat-value">1</div>
-                                            <div class="text-lg stat-desc text-white">+ 3 At Soon</div>
-                                          </div>
-
-                                        <div class="stat place-items-center">
-                                          <div class="stat-title">NFT Amount</div>
-                                          <div class="stat-value">10,000</div>
-                                          <div class="text-lg stat-desc text-white">in one Collection</div>
-                                        </div>
-
-                                        <div class="stat place-items-center">
-                                          <div class="stat-title">Users Subscriber</div>
-                                          <div class="stat-value text-white">2.2M</div>
-                                          <div class="text-lg stat-desc text-green-500">↗︎ (250%)</div>
-                                        </div>
-
-                                      </div>
-                                    <div class="flex justify-center gap-5 w-full">
-                                        <a class="bg-gradient-to-r from-yellow-500 to-orange-600
-                                        transition-all duration-300 hover:scale-95
-                                         text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2">
-                                            <ion-icon name="bag-handle" class="text-4xl "></ion-icon>
-                                            <span class="text-xl font2">Mint Now</span>
-                                        </a>
-                                        <a class="bg-gradient-to-r from-indigo-500 to-indigo-800
-                                        transition-all duration-300 hover:scale-95
-                                         text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2">
-                                            <ion-icon name="link" class="text-4xl "></ion-icon>
-                                            <span class="text-xl font2">View On OpenSea</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-{{-- level4 --}}
-        <div class="flex flex-col items-center justify-center  my-40">
-            <div class="container mx-auto ">
-                <div class="flex flex-col items-center justify-center gap-12">
-                    <div class="flex flex-col gap-5 items-center justify-center">
-                        <h2 class="text-7xl text-gray-300 font2 tracking-[6px]">
-                            <span>Why </span>
-                            <span class="text-yellow-600"> Amunra </span>
-                            <span>NFT</span>
-                         </h2>
-                         <h2 class="text-3xl  font2 tracking-[4px] text-yellow-600"> Most Important Of Our Featured </h2>
-
-                        <p class="text-lg  text-gray-300 text-center font2 w-2/3">EACH AMUNRA NFT HAS A UNIQUE SET OF TRAITS AND UNLOCKS VARYING UNIQUE LEVELS OF ACCESS AND PERKS FOR ITS OWNER</p>
-
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-12 w-5/6">
-                                <div class=" text-zinc-900 flex items-center gap-2  rounded-xl p-2 bg-gradient-to-r from-yellow-500 to-orange-600
-                                    hover:scale-95 transition-all duration-300 cursor-pointer">
-                                    <ion-icon name="checkmark-done" class="text-6xl  text-white bg-zinc-900 rounded-xl p-1"></ion-icon>
-                                    <div>
-                                        <div class="text-2xl font2">Taget Goal</div>
-                                        <div>
-                                            adaad asdasd dasads sdfsdf sdsdf
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" text-zinc-900 flex items-center gap-2  rounded-xl p-2 bg-gradient-to-r from-yellow-500 to-orange-600
-                                    hover:scale-95 transition-all duration-300  cursor-pointer">
-                                    <ion-icon name="checkmark-done" class="text-6xl  text-white bg-zinc-900 rounded-xl p-1"></ion-icon>
-                                    <div>
-                                        <div class="text-2xl font2">Taget Goal</div>
-                                        <div>
-                                            adaad asdasd dasads sdfsdf sdsdf
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" text-zinc-900 flex items-center gap-2  rounded-xl p-2 bg-gradient-to-r from-yellow-500 to-orange-600
-                                    hover:scale-95 transition-all duration-300  cursor-pointer">
-                                    <ion-icon name="checkmark-done" class="text-6xl  text-white bg-zinc-900 rounded-xl p-1"></ion-icon>
-                                    <div>
-                                        <div class="text-2xl font2">Taget Goal</div>
-                                        <div>
-                                            adaad asdasd dasads sdfsdf sdsdf
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" text-zinc-900 flex items-center gap-2  rounded-xl p-2 bg-gradient-to-r from-yellow-500 to-orange-600
-                                    hover:scale-95 transition-all duration-300  cursor-pointer">
-                                    <ion-icon name="checkmark-done" class="text-6xl  text-white bg-zinc-900 rounded-xl p-1"></ion-icon>
-                                    <div>
-                                        <div class="text-2xl font2">Taget Goal</div>
-                                        <div>
-                                            adaad asdasd dasads sdfsdf sdsdf
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" text-zinc-900 flex items-center gap-2  rounded-xl p-2 bg-gradient-to-r from-yellow-500 to-orange-600
-                                    hover:scale-95 transition-all duration-300  cursor-pointer">
-                                    <ion-icon name="checkmark-done" class="text-6xl  text-white bg-zinc-900 rounded-xl p-1"></ion-icon>
-                                    <div>
-                                        <div class="text-2xl font2">Taget Goal</div>
-                                        <div>
-                                            adaad asdasd dasads sdfsdf sdsdf
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" text-zinc-900 flex items-center gap-2  rounded-xl p-2 bg-gradient-to-r from-yellow-500 to-orange-600
-                                    hover:scale-95 transition-all duration-300  cursor-pointer">
-                                    <ion-icon name="checkmark-done" class="text-6xl  text-white bg-zinc-900 rounded-xl p-1"></ion-icon>
-                                    <div>
-                                        <div class="text-2xl font2">Taget Goal</div>
-                                        <div>
-                                            adaad asdasd dasads sdfsdf sdsdf
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-        {{-- level2 --}}
-        <div class="flex flex-col   relative my-40">
-            <div class="container mx-auto ">
-
-                <div class="">
-                    {{-- <div class="p-5 flex items-center justify-center">
-                        <div class="col-span-4">
-                            <style>
-
-
-                                .swiper-slide {
-                                  display: flex;
-                                  align-items: center;
-                                  justify-content: center;
-                                  border-radius: 18px;
-                                  font-size: 22px;
-                                  font-weight: bold;
-                                  color: #fff;
-                                }
-                                .swiper-slide-shadow{
-                                    opacity: 0;
-                                    background: rgba(0, 0, 0, 0)!important;
-                                }
-
-                              </style>
-                            <div class="swiper myswiper" style="width: 400px; height: 600px;">
-                                <div class="swiper-wrapper">
-                                  <div class="swiper-slide " style="background-color: transparent">
-                                    <img src="{{asset('/images/amunra1.png')}}" class="w-full" />
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <img src="{{asset('/images/amunra2.png')}}" class="w-full" />
-                                  </div>
-                                </div>
-                              </div>
-
-                              <!-- Swiper JS -->
-                              <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-                              <!-- Initialize Swiper -->
-                              <script>
-                                var swiper = new Swiper(".myswiper", {
-                                  effect: "cards",
-                                  grabCursor: true,
-                                });
-                              </script>
-                        </div>
-                    </div> --}}
-                    <div class="flex flex-col gap-7 items-center">
-                        <div class="flex items-center gap-1">
-                            <div class="flex flex-col items-center ">
-                                <ul class="steps steps-vertical">
-                                    <li class="step text-2xl step-primary">Register</li>
-                                    <li class="step step-primary">Choose plan</li>
-                                    <li class="step">Purchase</li>
-                                    <li class="step">Receive Product</li>
-                                  </ul>
-                            </div>
-
-                            <div>
-                                <span class="countdown font-mono text-6xl">
-                                    <span style="--value:57;"></span>
-                                  </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <img src="{{asset('images/wall2.png')}}" alt="" srcset="">
-            </div>
-
-            {{-- <div class="relative bottom-20 z-0">
-                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
-                    .path-0{
-                      animation:pathAnim-0 4s;
-                      animation-timing-function: linear;
-                      animation-iteration-count: infinite;
-                    }
-                    @keyframes pathAnim-0{
-                      0%{
-                        d: path("M 0,400 C 0,400 0,200 0,200 C 211.86666666666667,222.13333333333333 423.73333333333335,244.26666666666668 561,248 C 698.2666666666667,251.73333333333332 760.9333333333334,237.06666666666666 895,226 C 1029.0666666666666,214.93333333333334 1234.5333333333333,207.46666666666667 1440,200 C 1440,200 1440,400 1440,400 Z");
-                      }
-                      25%{
-                        d: path("M 0,400 C 0,400 0,200 0,200 C 151.46666666666664,181.33333333333331 302.9333333333333,162.66666666666666 470,153 C 637.0666666666667,143.33333333333334 819.7333333333333,142.66666666666669 984,152 C 1148.2666666666667,161.33333333333331 1294.1333333333332,180.66666666666666 1440,200 C 1440,200 1440,400 1440,400 Z");
-                      }
-                      50%{
-                        d: path("M 0,400 C 0,400 0,200 0,200 C 119.73333333333335,180.8 239.4666666666667,161.6 412,158 C 584.5333333333333,154.4 809.8666666666666,166.4 990,176 C 1170.1333333333334,185.6 1305.0666666666666,192.8 1440,200 C 1440,200 1440,400 1440,400 Z");
-                      }
-                      75%{
-                        d: path("M 0,400 C 0,400 0,200 0,200 C 190.2666666666667,171.06666666666666 380.5333333333334,142.13333333333333 557,135 C 733.4666666666666,127.86666666666667 896.1333333333334,142.53333333333336 1041,157 C 1185.8666666666666,171.46666666666664 1312.9333333333334,185.73333333333332 1440,200 C 1440,200 1440,400 1440,400 Z");
-                      }
-                      100%{
-                        d: path("M 0,400 C 0,400 0,200 0,200 C 211.86666666666667,222.13333333333333 423.73333333333335,244.26666666666668 561,248 C 698.2666666666667,251.73333333333332 760.9333333333334,237.06666666666666 895,226 C 1029.0666666666666,214.93333333333334 1234.5333333333333,207.46666666666667 1440,200 C 1440,200 1440,400 1440,400 Z");
-                      }
-                    }</style><path d="M 0,400 C 0,400 0,200 0,200 C 211.86666666666667,222.13333333333333 423.73333333333335,244.26666666666668 561,248 C 698.2666666666667,251.73333333333332 760.9333333333334,237.06666666666666 895,226 C 1029.0666666666666,214.93333333333334 1234.5333333333333,207.46666666666667 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#18181bff" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
-            </div> --}}
-        </div>
-
-
-
-        <div class=" bg-zinc-900 z-50">
-            <div class="container mx-auto py-10">
-
-                <div class="grid grid-cols-12">
-                    <div class="col-span-8">
-                        <div>
-                            <h2 class="text-gray-100 text-5xl font-bold">Mint Amunra NFT</h2>
-                        </div>
-                    </div>
-                    <div class="col-span-4">
-
-                        <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img src="{{asset('/images/amunra1.png')}}" class="w-[500px]" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="{{asset('/images/amunra2.png')}}" class="w-[500px]" />
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- Swiper JS -->
-                          <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-                          <!-- Initialize Swiper -->
-                          <script>
-                            var swiper = new Swiper(".mySwiper", {
-                              effect: "cards",
-                              grabCursor: true,
-                            });
-                          </script>
-                    </div>
-                </div>
-
-
-
-            </div>
 
 
         </div>
 
 
-        <div class=" bg-zinc-800 z-50">
-            <div class="container mx-auto py-10">
-                <div>
-                    <h2 class="text-gray-100 text-5xl font-bold">Amunra NFT RoadMap</h2>
-                </div>
-            </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </div>
