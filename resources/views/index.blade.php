@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.5/web3.min.js"></script>
 
     <script src="{{asset('js/app.js')}}"></script>
     <link
@@ -33,6 +32,7 @@ html {
   scroll-behavior: smooth;
 }
 
+[x-cloak] { display: none !important; }
 </style>
     <header class="sticky top-0 z-50 w-full">
 
@@ -42,7 +42,7 @@ html {
 
             <div class="w-full flex flex-col md:flex-row items-center justify-between  gap-3 text-gray-100">
                 <a class="flex items-center" href="/">
-                        <img src="http://127.0.0.1:8000/images/logo2.png" class="w-20">
+                        <img src="{{asset('images/logo2.png')}}" class="w-20">
                         <span class="font1 text-3xl text-yellow-600">AMUNRA</span>
                 </a>
                 <ul class="menu menu-horizontal p-0 font2">
@@ -80,19 +80,13 @@ html {
 
         {{-- mobile --}}
 
-        <div class="flex md:hidden flex-col md:flex-row gap-3 justify-between bg-black py-1 px-5">
-            <div class="flex justify-between gap-3 items-center" href="/">
-                <div class="flex gap-3 items-center">
-                    <img src="http://127.0.0.1:8000/images/logo2.png" class="w-20">
-                    <div class="flex flex-col">
-                        <span class="font1 text-3xl text-yellow-600 tracking-[6px]">AMUNRA</span>
-                        <span class="font1 text-xl text-gray-300 tracking-[6px]">Play To Earn</span>
-                    </div>
-                </div>
+        <div class="flex md:hidden flex-col md:flex-row gap-3 justify-between bg-black py-1 px-5 ">
+            <div class="w-full flex justify-between gap-3 items-center">
 
-                <div class="dropdown relative" dir="rtl">
-                    <label tabindex="0" class="">
-                        <ion-icon name="menu-outline" class="text-6xl text-gray-100"></ion-icon>
+                <div class="dropdown relative ">
+                    <label tabindex="0" class="flex flex-col justify-center items-center gap-2 p-2 text-gray-100 cursor-pointer transition-all duration-300 hover:scale-95">
+                        <ion-icon name="menu" class="text-3xl text-gray-100"></ion-icon>
+                        <span class="font2 text-xs" id="connectButtontxt">Menu</span>
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 gap-5">
                         <li><a href="#featuured" class="font2 text-xl">Featured</a></li>
@@ -103,18 +97,50 @@ html {
                     </ul>
                 </div>
 
+
+                <div class="w-full flex flex-col gap-1 items-center justify-center">
+                    <img src="{{asset('images/logo2.png')}}" class="w-16">
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="font1 text-2xl text-yellow-600 tracking-[6px]">AMUNRA</span>
+                        <span class="font1 text-base text-gray-300 tracking-[6px]">Play To Earn</span>
+                    </div>
                 </div>
 
-            <div class="w-full">
+
+                <a class="
+                transition-all duration-300 hover:scale-95 cursor-pointer
+                 text-gray-100 p-2 rounded-lg flex flex-col justify-center items-center gap-2"  onclick="connect()">
+                    <ion-icon name="wallet" class="text-3xl "></ion-icon>
+                    <span class="font2 text-xs" id="connectButtontxt"> Wallet</span>
+                </a>
+
+
+
+            </div>
+
+            {{-- <div class="w-full">
                 <div class="w-full flex justify-between gap-5 w">
-                    <a class="bg-gradient-to-r from-indigo-500 to-indigo-800
+                    <div class="dropdown relative">
+                        <label tabindex="0" class="flex flex-col justify-center items-center gap-2 p-2 text-gray-100">
+                            <ion-icon name="menu" class="text-3xl text-gray-100"></ion-icon>
+                            <span class="font2 text-xs" id="connectButtontxt">Menu</span>
+                        </label>
+                        <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 gap-5">
+                            <li><a href="#featuured" class="font2 text-xl">Featured</a></li>
+                            <li><a href="#mintnft" class="font2 text-xl">Mint NFT</a></li>
+                            <li><a href="#roadmap" class="font2 text-xl">RoadMap</a></li>
+                            <li><a href="#partners" class="font2 text-xl">Partners</a></li>
+                            <li><a href="#about" class="font2 text-xl">About Amunra</a></li>
+                        </ul>
+                    </div>
+                    <a class="
                     transition-all duration-300 hover:scale-95 cursor-pointer
-                     text-gray-100 p-2 rounded-lg flex justify-center items-center gap-2"  onclick="connect()">
-                        <ion-icon name="wallet" class="text-2xl "></ion-icon>
-                        <span class="font2" id="connectButtontxt">Connect Wallet</span>
+                     text-gray-100 p-2 rounded-lg flex flex-col justify-center items-center gap-2"  onclick="connect()">
+                        <ion-icon name="wallet" class="text-3xl "></ion-icon>
+                        <span class="font2 text-xs" id="connectButtontxt">Connect Wallet</span>
                     </a>
                 </div>
-            </div>
+            </div> --}}
           </div>
 
 
@@ -182,7 +208,7 @@ html {
                                     <div class="w-full text-center text-lg font2">
                                         Your Wallet Address
                                     </div>
-                                    <div class="w-full text-center " id="walletAddress">
+                                    <div class="w-full text-center text-red-600 font2 text-sm" id="walletAddress">
                                         Wallet Not Connected
                                     </div>
                                 </div>
@@ -192,24 +218,29 @@ html {
                         <div class="flex flex-col gap-5 justify-center items-center">
                             <div class="flex gap-8">
                                 <a class="flex flex-col justify-center items-center text-gray-300 hover:text-yellow-600
-                                transition-all duration-300 hover:scale-95 " href="">
+                                transition-all duration-300 hover:scale-95 " target="_blank" href="https://instagram.com/amunranft?igshid=YmMyMTA2M2Y=">
                                     <ion-icon name="logo-instagram" class="text-4xl md:text-6xl "></ion-icon>
                                     <span class="">Instagram</span>
                                 </a>
                                 <a class="flex flex-col justify-center items-center text-gray-300 hover:text-yellow-600
-                                transition-all duration-300 hover:scale-95 " href="">
+                                transition-all duration-300 hover:scale-95 " target="_blank" href="https://discord.gg/kywcnx35">
                                     <ion-icon name="logo-discord" class="text-4xl md:text-6xl "></ion-icon>
                                     <span class="">Discord</span>
                                 </a>
                                 <a  class="flex flex-col justify-center items-center text-gray-300 hover:text-yellow-600
-                                transition-all duration-300 hover:scale-95 " href="">
+                                transition-all duration-300 hover:scale-95 " target="_blank" href="https://twitter.com/amunranft?s=21&t=jFeRFnEv7bP3_dM-3HwB9Q">
                                     <ion-icon name="logo-twitter" class="text-4xl md:text-6xl "></ion-icon>
                                     <span class="">Twitter</span>
                                 </a>
                                 <a class="flex flex-col justify-center items-center text-gray-300 hover:text-yellow-600
-                                transition-all duration-300 hover:scale-95 " href="">
-                                    <ion-icon name="navigate-circle" class="text-4xl md:text-6xl "></ion-icon>
-                                    <span class="">Telegram</span>
+                                transition-all duration-300 hover:scale-95 " target="_blank" href="https://facebook.com/amunranft">
+                                    <ion-icon name="logo-facebook" class="text-4xl md:text-6xl "></ion-icon>
+                                    <span class="">Facebook</span>
+                                </a>
+                                <a class="flex flex-col justify-center items-center text-gray-300 hover:text-yellow-600
+                                transition-all duration-300 hover:scale-95 " target="_blank" href="https://linktr.ee/amunranft">
+                                    <ion-icon name="link-outline" class="text-4xl md:text-6xl "></ion-icon>
+                                    <span class="">Linktree</span>
                                 </a>
                             </div>
                         </div>
@@ -231,13 +262,13 @@ html {
             <div class="flex flex-col items-center justify-center  my-10">
                     <div class="container mx-auto "  >
                         <div class="flex flex-col items-center justify-center gap-12">
-                            <div class="flex flex-col gap-5 items-center justify-center">
-                                <h2 class="text-4xl md:text-7xl text-gray-300 font2 tracking-[6px]">
+                            <div class="w-full flex flex-col gap-5 items-center justify-center">
+                                <h2 class="text-3xl md:text-7xl text-gray-300 font2 tracking-[6px]">
                                     <span>Why </span>
                                     <span class="text-yellow-600 font1"> Amunra </span>
                                     <span>NFT</span>
                                 </h2>
-                                <h2 class="text-xl md:text-3xl  font2 tracking-[4px] text-yellow-600"> Most Important Of Our Featured </h2>
+                                <h2 class="text-xl md:text-3xl text-center  font2 tracking-[4px] text-yellow-600"> Most Important Of Our Featured </h2>
 
                                 <p class="text-lg  text-gray-300 text-center font2 w-full md:w-2/3">The most important point of our game is to generate income and present it in a very high quality in Metaverse</p>
 
@@ -291,13 +322,12 @@ html {
                                     <div class="container mx-auto flex flex-col justify-center items-center p-2 ">
 
                                         <div class=" flex flex-col items-center justify-center gap-3 mb-3">
-                                            <h2 class="text-4xl md:text-7xl text-gray-300 font2 tracking-[6px] text-center">
+                                            <h2 class="w-full text-3xl md:text-7xl text-gray-300 font2 tracking-[6px] text-center">
                                                 <span>Mint </span>
                                                 <span class="text-yellow-600 font1"> Amunra </span>
                                                 <span>NFT</span>
                                              </h2>
-                                             <h2 class="text-2xl md:text-4xl text-yellow-600 font2 tracking-[6px]"> 10,000 Mintable NFTs</h2>
-
+                                             <h2 class="w-full text-xl md:text-4xl text-yellow-600 font2 tracking-[6px] text-center"> 10,000 Mintable NFTs</h2>
                                         </div>
 
                                         <div class="flex flex-col md:flex-row w-max p-4 items-center justify-center gap-10 bg-zinc-900/90 rounded-2xl mt-10">
@@ -325,10 +355,16 @@ html {
                                                     <div class="swiper myswiper" style="width: 250px; height: 400px;">
                                                         <div class="swiper-wrapper">
                                                         <div class="swiper-slide " style="background-color: transparent">
-                                                            <img src="{{asset('/images/amunra1.png')}}" class="w-full" />
+                                                            <img src="{{asset('/images/cart1.png')}}" class="w-full rounded-xl" />
                                                         </div>
                                                         <div class="swiper-slide">
-                                                            <img src="{{asset('/images/amunra2.png')}}" class="w-full" />
+                                                            <img src="{{asset('/images/cart2.png')}}" class="w-full rounded-xl" />
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <img src="{{asset('/images/cart3.png')}}" class="w-full rounded-xl" />
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <img src="{{asset('/images/cart4.png')}}" class="w-full rounded-xl" />
                                                         </div>
                                                         </div>
                                                     </div>
@@ -341,25 +377,28 @@ html {
                                                         var swiper = new Swiper(".myswiper", {
                                                         effect: "cards",
                                                         grabCursor: true,
+                                                        loop: true,
                                                         });
                                                     </script>
                                                 </div>
                                             </div>
 
                                             <div class=" flex flex-col gap-8 items-center">
-                                                <div class="flex flex-col items-center gap-8">
-                                                    <div class="flex flex-col gap-8 items-center ">
-                                                        {{-- <h2 class="text-6xl text-gray-300 font1 tracking-[6px]"> Play To Earn </h2> --}}
-                                                        <h2 class="text-4xl text-gray-300 font2 tracking-[6px]"> Start Mint At  </h2>
-                                                        <h2 class="text-2xl text-yellow-600 font2 tracking-[6px]">  09/09/2022</h2>
+                                                <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+                                                    <div class="flex flex-col gap-3 items-center bg-zinc-800 p-2 rounded-xl">
+                                                        <h2 class="text-xl md:text-2xl text-gray-300 font2 tracking-[6px]"> Private Mint At  </h2>
+                                                        <h2 class="text-xl text-yellow-600 font2 tracking-[6px]">  01/sep/2022</h2>
+                                                    </div>
 
-
+                                                    <div class="flex flex-col gap-3 items-center bg-zinc-800 p-2 rounded-xl">
+                                                        <h2 class="text-xl md:text-2xl text-gray-300 font2 tracking-[6px]"> Public Mint At  </h2>
+                                                        <h2 class="text-xl text-yellow-600 font2 tracking-[6px]">  03/sep/2022</h2>
                                                     </div>
 
 
                                                 </div>
 
-                                                <div class="grid grid-cols-3 gap-3 rounded-xl shadow bg-zinc-800 text-gray-100 p-2">
+                                                <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-3 rounded-xl shadow bg-zinc-800 text-gray-100 p-2">
 
                                                     <div class="flex flex-col items-center justify-center">
                                                         <div class="stat-title">NFT Collection</div>
@@ -381,7 +420,7 @@ html {
 
                                                   </div>
                                                 <div class="flex flex-col md:flex-row justify-center gap-5 w-full">
-                                                    <a class="bg-gradient-to-r from-yellow-500 to-orange-600
+                                                    <a class="bg-zinc-800 text-zinc-700
                                                     transition-all duration-300 hover:scale-95
                                                      text-gray-100 p-3 rounded-lg flex justify-center items-center gap-2">
                                                         <ion-icon name="bag-handle" class="text-3xl "></ion-icon>
@@ -410,11 +449,11 @@ html {
                 <div class="container mx-auto ">
                     <div class="flex flex-col items-center justify-center gap-12">
                         <div class="w-full flex flex-col gap-5 items-center justify-center">
-                            <h2 class="text-4xl md:text-7xl text-gray-300 font2 tracking-[6px]">
+                            <h2 class="text-3xl md:text-7xl text-gray-300 font2 tracking-[6px]">
                                 <span class="text-yellow-600 font1"> Amunra </span>
                                 <span>RoadMap</span>
                             </h2>
-                            <h2 class="text-2xl md:text-3xl  font2 tracking-[4px] text-yellow-600"> The Way Of Our Goals</h2>
+                            <h2 class="text-xl md:text-3xl  font2 tracking-[4px] text-yellow-600"> The Way Of Our Goals</h2>
 
                         </div>
 
@@ -422,7 +461,7 @@ html {
                             <div class="">
                                 <div class="w-full grid grid-cols-2 md:grid-cols-12 gap-8 items-center">
 
-                                    <div class="swiper-slide col-span-1 md:col-span-3">
+                                    <div class="swiper-slide col-span-2 md:col-span-3">
                                         <div class="w-full" >
                                             <div @click="popup=1" class="w-full text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
                                             hover:scale-95 transition-all duration-300 cursor-pointer">
@@ -435,7 +474,7 @@ html {
                                         </div>
                                     </div>
 
-                                    <div class="swiper-slide col-span-1 md:col-span-3">
+                                    <div class="swiper-slide col-span-2 md:col-span-3">
                                         <div  class="w-full">
                                             <div @click="popup=2" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
                                             hover:scale-95 transition-all duration-300 cursor-pointer">
@@ -448,7 +487,7 @@ html {
                                         </div>
                                     </div>
 
-                                    <div class="swiper-slide col-span-1 md:col-span-3">
+                                    <div class="swiper-slide col-span-2 md:col-span-3">
                                         <div  class="w-full">
                                             <div @click="popup=3" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
                                             hover:scale-95 transition-all duration-300 cursor-pointer">
@@ -461,7 +500,7 @@ html {
                                         </div>
                                     </div>
 
-                                    <div class="swiper-slide col-span-1 md:col-span-3">
+                                    <div class="swiper-slide col-span-2 md:col-span-3">
                                         <div  class="w-full" >
                                             <div @click="popup=4" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
                                             hover:scale-95 transition-all duration-300 cursor-pointer">
@@ -558,7 +597,7 @@ html {
                                         </div>
                                     </div>
 
-                                    <div class="swiper-slide col-span-1 md:col-span-3">
+                                    <div class="swiper-slide col-span-2 md:col-span-3">
                                         <div  class="w-full" >
                                             <div @click="popup=12" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
                                             hover:scale-95 transition-all duration-300 cursor-pointer">
@@ -570,7 +609,7 @@ html {
                                         </div>
                                     </div>
 
-                                    <div class="swiper-slide col-span-1 md:col-span-3">
+                                    <div class="swiper-slide col-span-2 md:col-span-3">
                                         <div  class="w-full" >
                                             <div @click="popup=13" class=" text-zinc-900 flex items-center gap-2  rounded-xl py-2 px-4 bg-gradient-to-r from-yellow-500 to-orange-600
                                             hover:scale-95 transition-all duration-300 cursor-pointer">
@@ -590,7 +629,7 @@ html {
 
 
                             {{-- 1 --}}
-                            <div x-show="popup==1" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==1" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -618,7 +657,7 @@ html {
                             </div>
 
                             {{-- 2 --}}
-                            <div x-show="popup==2" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==2" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -646,7 +685,7 @@ html {
 
 
                             {{-- 3 --}}
-                            <div x-show="popup==3" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==3" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -689,7 +728,7 @@ html {
 
 
                             {{-- 4 --}}
-                            <div x-show="popup==4" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==4" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -731,7 +770,7 @@ html {
                             </div>
 
                             {{-- 5 --}}
-                            <div x-show="popup==5" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==5" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -765,7 +804,7 @@ html {
                             </div>
 
                             {{-- 6 --}}
-                            <div x-show="popup==6" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==6" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -795,7 +834,7 @@ html {
 
 
                             {{-- 7 --}}
-                            <div x-show="popup==7" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==7" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -830,7 +869,7 @@ html {
                             </div>
 
                             {{-- 8 --}}
-                            <div x-show="popup==8" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==8" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -866,7 +905,7 @@ html {
                             </div>
 
                             {{-- 9 --}}
-                            <div x-show="popup==9" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==9" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -903,7 +942,7 @@ html {
 
 
                             {{-- 10 --}}
-                            <div x-show="popup==10" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==10" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -942,7 +981,7 @@ html {
 
 
                             {{-- 11 --}}
-                            <div x-show="popup==11" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==11" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -974,7 +1013,7 @@ html {
                             </div>
 
                             {{-- 12 --}}
-                            <div x-show="popup==12" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==12" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -1007,7 +1046,7 @@ html {
                             </div>
 
                             {{-- 13 --}}
-                            <div x-show="popup==13" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
+                            <div x-cloak x-show="popup==13" x-transition class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-50 flex justify-center items-center p-2">
                                 <div @click.away="popup=0" class="bg-zinc-900 text-gray-200 py-5 px-8 rounded-2xl w-full md:w-2/4 flex flex-col gap-3 justify-center items-center">
                                     <h2 class="text-5xl text-gray-300 font2 tracking-[6px]">
                                         <span class="text-yellow-600 font1"> Amunra </span>
@@ -1060,7 +1099,7 @@ html {
                 <div class="container mx-auto ">
                     <div class="w-full flex flex-col items-center justify-center gap-12">
                                             <div class="w-full flex flex-col gap-5 items-center justify-center">
-                                                <h2 class="w-full text-center text-4xl md:text-6xl text-gray-300 font2 tracking-[6px]">
+                                                <h2 class="w-full text-center text-3xl md:text-6xl text-gray-300 font2 tracking-[6px]">
                                                     Investor and Partners
                                                  </h2>
                                                  <h2 class="text-xl md:text-3xl text-center  font2 tracking-[4px] text-yellow-600"> Most Important Of Our Featured </h2>
@@ -1073,9 +1112,6 @@ html {
                                                             hover:scale-95 transition-all duration-300 cursor-pointer">
                                                             <div class="flex flex-col items-center">
                                                                 <div class="text-2xl font2 text-yellow-600">NFT HOME DMCC</div>
-                                                                <div class="text-gray-100">
-                                                                    The most trusted game in Metaverse
-                                                                </div>
                                                             </div>
                                                 </div>
 
@@ -1083,9 +1119,6 @@ html {
                                                     hover:scale-95 transition-all duration-300 cursor-pointer">
                                                     <div class="flex flex-col items-center">
                                                         <div class="text-2xl font2 text-yellow-600">TELWINO  </div>
-                                                        <div class="text-gray-100">
-                                                                The most trusted game in Metaverse
-                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -1093,9 +1126,6 @@ html {
                                                         hover:scale-95 transition-all duration-300 cursor-pointer">
                                                         <div class="flex flex-col items-center">
                                                         <div class="text-2xl font2 text-yellow-600">Unique NFT</div>
-                                                        <div class="text-gray-100">
-                                                            The most trusted game in Metaverse
-                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -1103,9 +1133,6 @@ html {
                                                     hover:scale-95 transition-all duration-300 cursor-pointer">
                                                     <div class="flex flex-col items-center">
                                                     <div class="text-2xl font2 text-yellow-600">NFTMP </div>
-                                                    <div class="text-gray-100">
-                                                        The most trusted game in Metaverse
-                                                    </div>
                                                     </div>
                                                 </div>
 
@@ -1113,9 +1140,7 @@ html {
                                                     hover:scale-95 transition-all duration-300 cursor-pointer">
                                                     <div class="flex flex-col items-center">
                                                     <div class="text-2xl font2 text-yellow-600">Tech 2.0</div>
-                                                    <div class="text-gray-100">
-                                                        The most trusted game in Metaverse
-                                                    </div>
+
                                                     </div>
                                                 </div>
 
@@ -1123,9 +1148,7 @@ html {
                                                     hover:scale-95 transition-all duration-300 cursor-pointer">
                                                     <div class="flex flex-col items-center">
                                                     <div class="text-2xl font2 text-yellow-600">TADS GAMES</div>
-                                                    <div class="text-gray-100">
-                                                        The most trusted game in Metaverse
-                                                    </div>
+
                                                     </div>
                                                 </div>
 
@@ -1155,14 +1178,14 @@ html {
                 <div class="">
 
                     <div class="flex flex-col gap-7 items-center">
-                        <div class="flex flex-col items-center gap-8">
-                            <div class="flex flex-col gap-5 items-center ">
+                        <div class="w-full flex flex-col items-center gap-8">
+                            <div class="w-full flex flex-col gap-5 items-center ">
                                 {{-- <img src="{{asset('/images/logo2.png')}}" class="w-[250px]" /> --}}
-                                <div class="flex flex-col gap-5 items-center ">
+                                <div class="w-full flex flex-col gap-5 items-center ">
                                     <img src="{{asset('/images/logo2.png')}}" class="w-[190px]" />
                                     <h2 class="text-7xl text-yellow-600 font1 tracking-[6px]"> Amunra </h2>
-                                    <h2 class="text-5xl text-gray-300 font1 tracking-[6px]">  NFT Collection</h2>
-                                    <h2 class="text-4xl text-gray-300 font1 tracking-[6px]">
+                                    <h2 class="text-4xl md:text-5xl text-gray-300 font1 tracking-[6px]">  NFT Collection</h2>
+                                    <h2 class="text-2xl md:text-4xl text-gray-300 font1 tracking-[6px]">
                                         <span>10,000 </span>
                                         <span class="text-yellow-600"> Mintable </span>
                                         <span> NFTs</span>
@@ -1170,7 +1193,7 @@ html {
 
 
                                 </div>
-                                <h1 class="text-4xl md:text-6xl text-yellow-600 font1 tracking-[6px]"> World Of Amunra</h1>
+                                <h1 class="text-3xl md:text-4xl md:text-6xl text-yellow-600 font1 tracking-[6px]"> World Of Amunra</h1>
                             </div>
                             <div x-data="{box:false}" class="w-full  md:w-3/6">
                                 <div>
@@ -1276,6 +1299,9 @@ html {
 
       <title>Connect to crypto wallet</title>
 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.5/web3.min.js"></script>
+
+
    <script>
     /* To connect using MetaMask */
     async function connect() {
@@ -1283,6 +1309,7 @@ html {
         $walletdiv=document.getElementById('walletAddress');
 
       if (typeof window.ethereum !== 'undefined') {
+        console.log('yews')
          $acc=await window.ethereum.request({ method: "eth_requestAccounts" });
          window.web3 = new Web3(window.ethereum);
          const account = web3.eth.accounts;
@@ -1290,11 +1317,14 @@ html {
          const walletAddress = account.givenProvider.selectedAddress;
          $btn.textContent ="Connected";
          $walletdiv.textContent=`${walletAddress}`;
+         $walletdiv.classList.remove("text-red-600");
+         $walletdiv.classList.add("text-green-600");
          console.log(`Wallet: ${walletAddress}`);
+         alert('Your Wallet is Connected. => '+`Wallet : ${walletAddress}`);
 
       } else {
-        console.log($acc);
        console.log("No wallet");
+       alert('You Should First Download MetaMask.');
        window.open("https://metamask.io/download/", "_blank");
       }
     }
